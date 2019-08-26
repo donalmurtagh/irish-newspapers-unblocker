@@ -13,5 +13,5 @@ quota restriction, simply click the shamrock browser extension icon and the arti
 new incognito window.
 
 **Note:**
-This plugin can only unblock pages that are restricted due to quota restrictions, i.e.
+This plugin can only unblock pages that are blocked due to quota restrictions, i.e.
 it cannot unblock pages that are only available to Irish Times subscribers.
