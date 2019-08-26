@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Bypass Irish Times Quota Restriction",
+  "version": "0.1",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
