@@ -3,7 +3,7 @@
   "name": "Bypass Irish Times Quota Restriction",
   "version": "0.1",
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": "shamrock.png"
   },
   "background": {
     "scripts": ["background.js"]

@@ -5,9 +5,9 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 
         const blockedPageUrl = tab.url;
         const queryStringIndex = blockedPageUrl.lastIndexOf("?");
-        //const isIrishTimesPage = new URL(blockedPageUrl).hostname.endsWith("irishtimes.com");
+        const isIrishTimesPage = new URL(blockedPageUrl).hostname.endsWith("irishtimes.com");
 
-        if (queryStringIndex > -1) {
+        if (isIrishTimesPage && queryStringIndex > -1) {
             const unblockedPageUrl = blockedPageUrl.substring(0, queryStringIndex);
             chrome.windows.create({url: unblockedPageUrl, incognito: true});
         }
