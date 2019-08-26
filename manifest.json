@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Bypass Irish Times Quota Restriction",
+  "name": "Irish Times Unblocker",
   "version": "0.1",
   "browser_action": {
     "default_icon": "shamrock.png"

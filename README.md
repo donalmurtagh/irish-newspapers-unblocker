@@ -1,4 +1,4 @@
-# Irish Times Chrome Extension
+# Irish Times Unblocker
 A Chrome browser extension that bypasses the Irish Times' quota restriction
 
 ## Installation Instructions
@@ -11,3 +11,7 @@ A Chrome browser extension that bypasses the Irish Times' quota restriction
 After installing this extension, if you're prevented from reading an article on irishtimes.com due to their
 quota restriction, simply click the shamrock browser extension icon and the article will be opened in a
 new incognito window.
+
+**Note:**
+This plugin can only unblock pages that are restricted due to quote restrictions, i.e.
+it cannot unblock pages that are only available to Irish Times subscribers.
