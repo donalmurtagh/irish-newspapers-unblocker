@@ -10,14 +10,15 @@ chrome.browserAction.onClicked.addListener(function (tab) {
         if (isIrishTimesPage && queryStringIndex > -1) {
             const unblockedPageUrl = blockedPageUrl.substring(0, queryStringIndex);
 
-            try {
-                // double-check that the URL is valid before attempting to open it in an incognito window
-                new URL(unblockedPageUrl);
-                chrome.windows.create({url: unblockedPageUrl, incognito: true});
-
-            } catch (ex) {
-                console.error(`The extension cannot open an invalid URL ${unblockedPageUrl}`);
-            }
+            chrome.browsingData.remove({
+                    "origins": [
+                        "https://www.irishtimes.com",
+                        "http://www.irishtimes.com"
+                    ]
+                },
+                {"cookies": true},
+                () => chrome.tabs.update(tab.id, {url: unblockedPageUrl})
+            );
         }
     });
 });

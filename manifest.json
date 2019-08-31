@@ -9,6 +9,7 @@
     "scripts": ["background.js"]
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "browsingData"
   ]
 }
