@@ -2,8 +2,8 @@
 A Chrome browser extension that bypasses the Irish Times' quota restriction
 
 ## Installation Instructions
-1. Download (or clone) this repository
-2. In chrome, open chrome://extensions/
+1. Download (or clone) this repository. If you downloaded it, extract the ZIP file
+2. In Chrome, open chrome://extensions/
 3. Enable "Developer mode"
 4. Click the "Load unpacked" button and select the root directory of this repository to add this extension to Chrome
 
