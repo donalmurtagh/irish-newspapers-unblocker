@@ -1,5 +1,5 @@
 // Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function (tab) {
+chrome.browserAction.onClicked.addListener(tab => {
 
     const blockedPageUrl = tab.url;
     const queryStringIndex = blockedPageUrl.lastIndexOf("?");
