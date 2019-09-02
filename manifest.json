@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Irish Times Unblocker",
-  "version": "0.2",
+  "version": "1.0",
   "browser_action": {
     "default_icon": "shamrock.png"
   },
@@ -11,5 +11,13 @@
   "permissions": [
     "tabs",
     "browsingData"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.irishtimes.com/*"
+      ],
+      "js": ["content.js"]
+    }
   ]
 }
