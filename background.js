@@ -20,9 +20,7 @@ const unblockPage = tab => {
 
 
 // Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(tab => {
-    unblockPage(tab);
-});
+chrome.browserAction.onClicked.addListener(tab => unblockPage(tab));
 
 // this message is sent by the content script
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
