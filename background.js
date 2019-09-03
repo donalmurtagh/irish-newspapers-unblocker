@@ -7,12 +7,12 @@ const unblockPage = tab => {
         const unblockedPageUrl = blockedPageUrl.substring(0, queryStringIndex);
 
         chrome.browsingData.remove({
-                "origins": [
+                origins: [
                     "https://www.irishtimes.com",
                     "http://www.irishtimes.com"
                 ]
             },
-            {"cookies": true},
+            {cookies: true},
             () => chrome.tabs.update(tab.id, {url: unblockedPageUrl})
         );
     }
@@ -33,8 +33,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
         chrome.tabs.query({'active': true, 'lastFocusedWindow': true})
          */
-        chrome.tabs.query({url: request.blockedPageUrl}, tabs => {
-            tabs.forEach(tab => unblockPage(tab));
-        })
+        chrome.tabs.query({url: request.blockedPageUrl},
+            tabs => tabs.forEach(tab => unblockPage(tab)));
     }
 );
