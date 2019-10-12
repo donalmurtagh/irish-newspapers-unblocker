@@ -42,14 +42,15 @@ chrome.runtime.onMessage.addListener(
             Chrome extension <small>(click to close)</small>`;
 
         unblockedNotice.style.cssText = `
-            color:              darkslategray; 
+            color:              #333; 
             position:           fixed; 
             bottom:             0px; 
             margin:             0; 
-            background-color:   white; 
-            padding:            5px 5px; 
+            background-color:   #e4f0f5; 
+            padding:            7px; 
             font-size:          15px;
-            border:             1px solid darkslategray;
+            border:             0 solid #3d7e9a;
+            border-left-width:  5px;
             cursor:             pointer`;
 
         unblockedNotice.addEventListener("click", (event) => {
