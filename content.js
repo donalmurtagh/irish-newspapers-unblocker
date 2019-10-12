@@ -35,5 +35,27 @@ chrome.runtime.onMessage.addListener(
             setDisplayProperty(".datawallProtected", "block");
             setDisplayProperty(".w136", "none");
         }
+
+        const unblockedNotice = document.createElement("div");
+        unblockedNotice.innerHTML = `This page was unblocked by the 
+            <a href='https://github.com/donalmurtagh/irish-newspapers-unblocker' target='_blank'><u>Irish Newspapers Unblocker</u></a> 
+            Chrome extension <small>(click to close)</small>`;
+
+        unblockedNotice.style.cssText = `
+            color:              darkslategray; 
+            position:           fixed; 
+            bottom:             0px; 
+            margin:             0; 
+            background-color:   white; 
+            padding:            5px 5px; 
+            font-size:          15px;
+            border:             1px solid darkslategray;
+            cursor:             pointer`;
+
+        unblockedNotice.addEventListener("click", (event) => {
+            document.body.removeChild(unblockedNotice);
+        });
+
+        document.body.appendChild(unblockedNotice);
     }
 );
