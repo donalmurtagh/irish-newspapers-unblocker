@@ -1,10 +1,11 @@
 const unblockPage = tab => {
     const blockedPageUrl = tab.url;
-    const queryStringIndex = blockedPageUrl.lastIndexOf("?");
-    const isIrishTimesPage = new URL(blockedPageUrl).hostname.endsWith("irishtimes.com");
+    const {hostname} = new URL(blockedPageUrl);
 
-    if (isIrishTimesPage && queryStringIndex > -1) {
-        const unblockedPageUrl = blockedPageUrl.substring(0, queryStringIndex);
+    if (hostname.endsWith("irishtimes.com")) {
+        // Remove any query string params from the URL before reloading it
+        const queryStringIndex = blockedPageUrl.lastIndexOf("?");
+        const unblockedPageUrl = queryStringIndex > -1 ? blockedPageUrl.substring(0, queryStringIndex) : blockedPageUrl;
 
         chrome.browsingData.remove({
                 origins: [
@@ -16,13 +17,17 @@ const unblockPage = tab => {
             () => chrome.tabs.update(tab.id, {url: unblockedPageUrl})
         );
     }
+
+    // We can't modify page content in this (background) script so we need to send a message to the content script
+    // to do it instead
+    chrome.tabs.sendMessage(tab.id, {"blockedPageHostname": hostname});
 };
 
 
 // Called when the user clicks on the browser action.
 chrome.browserAction.onClicked.addListener(tab => unblockPage(tab));
 
-// this message is sent by the content script
+// listen for messages sent by the content script
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
         /*
