@@ -6,7 +6,7 @@ articles on independent.ie.
 1. Download (or clone) this repository. To download the repository, choose the "Download ZIP" option that appears when you click on the "Code" button, then extract the downloaded ZIP file
 2. In Chrome, open [chrome://extensions/](chrome://extensions/)
 3. Enable "Developer mode"
-4. Click the "Load unpacked" button and select the root directory of this repository to add this extension to Chrome
+4. Click the "Load unpacked" button and select the root directory of this repository (or extracted ZIP file) to add this extension to Chrome
 
 ## Usage Instructions
 After installing this extension:
